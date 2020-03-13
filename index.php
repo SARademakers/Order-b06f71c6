@@ -47,7 +47,7 @@ if(isset($_GET['film_switch'])) {
 }
 
 
-function getASC_or_DESC($switch) {
+function getASC_Or_DESC($switch) {
     if($switch) {
         return 'ASC';
     }
@@ -55,7 +55,7 @@ function getASC_or_DESC($switch) {
 }
 
 
-$series = $pdo->prepare("SELECT * FROM series ORDER BY $serie_order " . getASC_or_DESC($_SESSION['serieswitch']));
+$series = $pdo->prepare("SELECT * FROM series ORDER BY $serie_order " . getASC_Or_DESC($_SESSION['serieswitch']));
 $series->execute();
 
 $film = $pdo->prepare("SELECT * FROM movies ORDER BY $film_order " . getASC_or_DESC($_SESSION['filmswitch']));
